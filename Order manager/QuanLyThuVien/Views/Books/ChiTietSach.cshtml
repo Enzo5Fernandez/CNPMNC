@@ -1,0 +1,41 @@
+﻿@model IEnumerable<QuanLyThuVien.Models.Book>
+@{
+    ViewBag.Title = "ChiTietSach";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <div class="row">
+        @foreach (var item in Model)
+        {
+            <div class="col-3">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Img/Doremon.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> @Html.DisplayFor(modelItem => item.BookName)</h5>
+                        <a href="#" class="btn btn-primary">Đọc ngay</a>
+                    </div>
+                </div>
+            </div>
+@*
+            <div class="col">
+                <div class="card" style="width: 18rem;">
+                    <img src="~/Img/Doremon.jpg" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title"> @Html.DisplayFor(modelItem => item.BookName)</h5>
+                        <p class="card-text">
+                            123123123
+                        </p>
+                        <a href="#" class="btn btn-primary">Đọc ngay</a>
+                    </div>
+                </div>
+            </div>*@
+
+       
+        }
+
+
+    </div>
+
+</div>
+

@@ -1,0 +1,79 @@
+﻿@model IEnumerable<QuanLyThuVien.Models.Book>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Quản Lý Sách</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            <div class="col-md-10">
+                @Html.DisplayNameFor(model => model.TheLoai)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.BookName)
+        </th>
+        <th>
+            <div class="col-md-10">
+                @Html.DisplayNameFor(model => model.TacGia)
+        </th>
+      @*  <th>
+            <div class="col-md-10">
+                @Html.DisplayNameFor(model => model.Anh)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.NgayPH)
+        </th>
+        @*<th>
+            @Html.DisplayNameFor(model => model.SoTrang)
+        </th>*@
+        <th>
+            @Html.DisplayNameFor(model => model.Mota)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Gia)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TheLoai)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.BookName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TacGia)
+        </td>
+      @*  <td>
+          <img src="@item.Anh" alt="Alternate Text" />
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.NgayPH)
+        </td>
+     @*   <td>
+            @Html.DisplayFor(modelItem => item.SoTrang)
+        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => item.Mota)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gia)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.BookID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.BookID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.BookID })
+        </td>
+    </tr>
+}
+
+</table>
